@@ -1,0 +1,14 @@
+require "bundler/gem_tasks"
+require "rspec/core/rake_task"
+
+RSpec::Core::RakeTask.new(:spec)
+
+task :default => :spec
+
+task :sinTDD do
+    sh "ruby -Ilib lib/dsl.rb"
+end
+
+# task :spec do
+#     sh "rspec -I. -f d spec/dsl_spec.rb"
+# end

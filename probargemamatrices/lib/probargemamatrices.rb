@@ -86,4 +86,32 @@ module Probargemamatrices
 
  puts "Comparamos dos matrices"  
  puts mm_dsl_numeros.transposed
+
+   #Crear la variable mmn1. 
+
+   mmn1 = MatrizMultiDimensional.new([[1, 2, 3], [4, 5, 6], [7 , 8, 9]])
+  
+   #Crear la variable mmn2. 
+   
+   mmn2 = MatrizMultiDimensional.new() do
+       fila 1, 2, 3
+       fila 4, 5, 6
+       fila 7, 8, 9
+     end
+   
+   #Almacenar en mmn3 la suma de mmn1 y mmn2
+   
+   mmn3 =  mmn1 +mmn2
+     
+   #Almacenar transpuesta de mmn3 en mmn4.
+   
+    
+ mmn4 = mmn3.transposed
+  
+   
+ #  Almacenar en mmn5 el incremento de 1 a cada posicion y mostrar resultado
+   
+   mmn5 = mmn4.collect { |valor| valor = valor + 1}
+   puts "\nResultado de sumar, transponer y sumar 1 a cada elemento de la matriz, es: \n"
+   puts mmn5.to_s
 end
